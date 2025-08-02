@@ -1,0 +1,20 @@
+# Ignore __pycache__ directories
+__pycache__/
+
+# # Ignore SQLite database files (if you don’t want them in the repo)
+# *.db
+panoja_lite.sqbpro
+
+# Ignore Python bytecode files
+*.pyc
+*.pyo
+
+# Ignore environment files
+.env
+*.env
+
+# Ignore logs
+*.log
+
+# Ignore cryptography key
+secret.key

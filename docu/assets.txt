@@ -1,0 +1,24 @@
+
++----+---------------------+-----------------+----------+-------------------------------------------------------+------------+
+| ID | Asset Name          | Asset Type      | Owner    | Asset Description                                     | Currency   |
++----+---------------------+-----------------+----------+-------------------------------------------------------+------------+
+| 1  | acc_bk_sm_5081      | account_balance | Sara     | Sara's Bankinter bank account                         | EURO       |
+| 2  | acc_bk_co_4264      | account_balance | Common   | Joint Bankinter bank account                          | EURO       |
+| 3  | acc_bk_cc_4257      | account_balance | Carlos   | Carlos' Bankinter bank account                        | EURO       |
+| 4  | acc_lloyds          | account_balance | Carlos   | Carlos' Lloyds bank account. In Sterling              | STERLING   |
+| 5  | indexa_cc           | investment      | Carlos   | Carlos' investment account with Indexa                | EURO       |
+| 6  | indexa_sm           | investment      | Sara     | Sara's investment account with Indexa                 | EURO       |
+| 7  | allianz_inv_cc      | investment      | Carlos   | Carlos' investment account with Allianz               | EURO       |
+| 8  | allianz_inv_sm      | investment      | Sara     | Sara's investment account with Allianz                | EURO       |
+| 9  | fidelity_ap         | pension_fund    | Carlos   | Carlos' private pension with Fidelity. In Sterling    | STERLING   |
+| 10 | indexa_pension_cc   | pension_fund    | Carlos   | Carlos' private pension with Indexa                   | EURO       |
+| 11 | allianz_pension_sm  | pension_fund    | Sara     | Sara's private pension with Allianz                   | EURO       |
+| 12 | mutua_pension       | pension_fund    | Sara     | Sara's private pension with Mutua                     | EURO       |
+| 13 | generali_pension    | pension_fund    | Sara     | Sara's private pension with Generali                  | EURO       |
+| 14 | azcona_43_house     | housing         | Common   | Current market value of the house                     | EURO       |
+| 15 | mini_car            | sellable_goods  | Common   | Mini Cooper S Cabrio                                  | EURO       |
+| 16 | ducati_bike         | sellable_goods  | Common   | Ducati Monster 821                                    | EURO       |
+| 17 | watch_collection    | sellable_goods  | Carlos   | Carlos watch collection. Includes only sellable pieces| EURO       |
+| 18 | azcona_43_parking   | housing         | Common   | Current market value of the parking garages           | EURO       |
+| 19 | mortgage_azcona_43  | debt            | Common   | Outstanding balance of the mortgage for Azcona 43     | EURO       |
++----+---------------------+-----------------+----------+-------------------------------------------------------+------------+

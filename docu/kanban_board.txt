@@ -1,0 +1,115 @@
+# kanban_board.txt
+
+╔══════════════════════════════════════════════════════════════════════════════════╗
+║ ✅ Ticket F014: Initial Cloud Deployment to Streamlit Community Cloud            ║
+╠══════════════════════════════════════════════════════════════════════════════════╣
+║ > Goal: Deploy the PanojaLite application to Streamlit Community Cloud,          ║
+║         connecting it to the `dev` database branch for initial testing.          ║
+╠══════════════════════════════════════════════════════════════════════════════════╣
+║ > Description: This ticket covers the initial deployment to a live environment,  ║
+║   using the development database branch to confirm the end-to-end workflow.      ║
+╠══════════════════════════════════════════════════════════════════════════════════╣
+║ 1. Cleanup of existing working code
+║ 2. GitHub Repository & Requirements:                                             ║
+║    • Ensure the public GitHub repository is up to date.                          ║
+║    • Verify `requirements.txt` includes `psycopg2-binary` and `sqlalchemy`.      ║
+║ 3. Streamlit Community Cloud Deployment:                                         ║
+║    • Deploy the application from the GitHub repository.                          ║
+║ 4. Cloud Secrets Configuration:                                                  ║
+║    • In the Streamlit Cloud app settings, add the `secret.key` and the full      ║
+║      `secrets.json` content (containing both dev and prod URLs).                 ║
+║    • The app will need logic to select the `dev` URL from the secrets.           ║
+║ 5. Online Testing:                                                               ║
+║    • Verify the deployed app loads and correctly displays data from the `dev`    ║
+║      database branch.                                                            ║
+╚══════════════════════════════════════════════════════════════════════════════════╝
+
+╔══════════════════════════════════════════════════════════════════════════════════╗
+╚══════════════════════════════════════════════════════════════════════════════════╝
+Step 1: Rename Your Local Project Folder
+
+1. Close any open terminals, code editors (like VS Code), or file explorers that are inside your project directory.
+2. Using your operating system's file explorer, navigate to where your project is stored (e.g., F:\NotGames\PythonDev\PanojaLite_V1_0\).
+3. Rename the PanojaLite folder to PanojaLite-dev.
+
+Step 2: Rename the Repository on GitHub
+1. Go to your repository on GitHub.
+2. Go to Settings.
+3. Rename the repository to PanojaLite-dev.
+
+Step 3: Update Your Local Git Remote Configuration
+1. Open a new terminal inside your newly renamed local folder, PanojaLite-dev.
+2. Your origin remote is still pointing to the old URL. We need to update it.
+    # Replace the URL with the new URL of your private repo
+    git remote set-url origin https://github.com/Sbarbatello/PanojaLite-dev.git
+3. Verify the change with git remote -v. It should now correctly point to PanojaLite-dev.git.
+Result of Steps 1-3: Your local folder and your private GitHub repository are now perfectly and logically linked with the name PanojaLite-dev.
+
+Step 4: Create the New Public Repository
+1. Go to GitHub.
+2. Create a new, public, empty repository.
+3. Name it PanojaLite.
+4. Copy its URL.
+
+Step 5: Add the Public Repo as a New Remote
+1. In your terminal (still inside the PanojaLite-dev local folder), add the new public repo as a remote.
+    # Replace the URL with the URL of your new public repo
+    git remote add public https://github.com/Sbarbatello/PanojaLite.git
+
+Step 6: Perform the First Release Push
+1. Now, you can safely push your code to the public repository for the first time.
+    # Make sure you are on your main branch
+    git checkout main
+
+    # Push to the 'public' remote, forcing a clean history
+    git push public main -f
+
+The Final State (Clean and Clear)
+After this process, your setup will be:
+• Local Folder: PanojaLite-dev/
+• Private Repo (with full history): github.com/Sbarbatello/PanojaLite-dev
+• Public Repo (for deployment): github.com/Sbarbatello/PanojaLite
+╔══════════════════════════════════════════════════════════════════════════════════╗
+╚══════════════════════════════════════════════════════════════════════════════════╝
+
+
+
+╔══════════════════════════════════════════════════════════════════════════════════╗
+║ 🎟️ Ticket F015: Final Production Data Refresh                                    ║
+╠══════════════════════════════════════════════════════════════════════════════════╣
+║ > Goal: Ensure the production database is 100% up-to-date with the latest        ║
+║         asset valuations before the final deployment.                            ║
+╠══════════════════════════════════════════════════════════════════════════════════╣
+║ > Description: This ticket covers the final data synchronization step. This can  ║
+║   be done either by running a script or by using the deployed app itself.        ║
+╠══════════════════════════════════════════════════════════════════════════════════╣
+║ 1. Connect App to Production:                                                    ║
+║    • Temporarily point the deployed Streamlit app to the `prod` database by      ║
+║      setting the `ACTIVE_DB_ENV` secret to `"prod"`.                             ║
+║ 2. Ingest Final Data:                                                            ║
+║    • Using the app's "Data Ingestion" page, upload the latest files and enter    ║
+║      the most recent manual/API data for all assets.                             ║
+║ 3. Verify Data:                                                                  ║
+║    • Use the "Summary Dashboard" to confirm that all assets show the correct,    ║
+║      up-to-date values and latest valuation dates.                               ║
+║ 4. Revert App to Dev (Optional but Recommended):                                 ║
+║    • Set the `ACTIVE_DB_ENV` secret back to `"dev"` until the final "go-live".   ║
+╚══════════════════════════════════════════════════════════════════════════════════╝
+
+╔══════════════════════════════════════════════════════════════════════════════════╗
+║ 🎟️ Ticket F016: Final Go-Live Deployment to Production                           ║
+╠══════════════════════════════════════════════════════════════════════════════════╣
+║ > Goal: Switch the live Streamlit application to permanently connect to the      ║
+║         production database.                                                     ║
+╠══════════════════════════════════════════════════════════════════════════════════╣
+║ > Description: This is the final step to "go live," pointing the deployed app to ║
+║   the clean, fully populated production database.                                ║
+╠══════════════════════════════════════════════════════════════════════════════════╣
+║ 1. Final Configuration Switch:                                                   ║
+║    • In the Streamlit Community Cloud app settings, ensure the `ACTIVE_DB_ENV`   ║
+║      secret is set to `"prod"`.                                                  ║
+║ 2. Redeploy Application:                                                         ║
+║    • Trigger a reboot/redeployment of the Streamlit app to apply the change.     ║
+║ 3. Final Verification:                                                           ║
+║    • Access the public URL and confirm it displays the final production data.    ║
+╚══════════════════════════════════════════════════════════════════════════════════╝

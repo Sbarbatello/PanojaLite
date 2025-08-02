@@ -1,0 +1,69 @@
+Table Definitions
+
++-+-+-+-+-+
+| SQLite  |
++-+-+-+-+-+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+1. dim_assets (Asset Dimension Table)
+This table stores information about each unique asset, including its name, type, and owner.
+
+CREATE TABLE dim_assets (
+    asset_id SERIAL PRIMARY KEY, -- asset_id: A unique identifier for each asset
+    asset_name TEXT UNIQUE NOT NULL, -- asset_name: The name or description of the asset
+    asset_type TEXT NOT NULL, -- asset_type: Category of the asset
+    asset_owner TEXT, -- asset_owner: The owner of the asset
+    asset_description TEXT, --  asset_description: brief description of the asset
+    asset_currency TEXT, -- asset_currency: currency
+    initial_valuation REAL, -- initial valuation of the asset on acquisition_date
+    acquisition_date TIMESTAMP -- date the asset was acquired
+)
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+2. positions (Fact Table)
+This table captures transactional data or "positions" related to assets over time, with links to dim_assets.
+
+CREATE TABLE positions (
+    position_id SERIAL PRIMARY KEY,
+    asset_id INTEGER,
+    current_value REAL,                      -- most recent asset valuation
+    valuation_date TIMESTAMP DEFAULT (datetime('now')), -- date of most recent valuation
+    FOREIGN KEY (asset_id) REFERENCES dim_assets(asset_id)
+)
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
++-+-+-+-+-+-+-+
+| PostgreSQL  |
++-+-+-+-+-+-+-+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+1. dim_assets (Asset Dimension Table)
+This table stores information about each unique asset, including its name, type, and owner.
+
+CREATE TABLE dim_assets (
+    asset_id SERIAL PRIMARY KEY, -- asset_id: A unique identifier for each asset
+    asset_name TEXT UNIQUE NOT NULL, -- asset_name: The name or description of the asset
+    asset_type TEXT NOT NULL, -- asset_type: Category of the asset
+    asset_owner TEXT, -- asset_owner: The owner of the asset
+    asset_description TEXT, --  asset_description: brief description of the asset
+    asset_currency TEXT, -- asset_currency: currency
+    initial_valuation REAL, -- initial valuation of the asset on acquisition_date
+    acquisition_date TIMESTAMP -- date the asset was acquired
+)
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+2. positions (Fact Table)
+This table captures transactional data or "positions" related to assets over time, with links to dim_assets.
+
+CREATE TABLE positions (
+    position_id SERIAL PRIMARY KEY,
+    asset_id INTEGER,
+    current_value REAL,                      -- most recent asset valuation
+    valuation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- date of most recent valuation
+    FOREIGN KEY (asset_id) REFERENCES dim_assets(asset_id)
+)
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+

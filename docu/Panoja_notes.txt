@@ -1,0 +1,57 @@
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+1. Insert positions for all assets
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+git checkout main
+git checkout -b feature/F003.1/Data_insertion
+git push --set-upstream origin feature/F003.1/Data_insertion
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+missing: 3, 11, 12, 13, 15, 16, 17
+need to create 19: mortgage left
+
+###############################################
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+2. Begin to programme the Streamlit app to show some progress
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+git checkout main
+git checkout -b feature/F004/Streamlit_first_draft
+git push --set-upstream origin feature/F004/Streamlit_first_draft
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+###############################################
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+3. Create data ingestion Streamlit app
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+git checkout main
+git checkout -b feature/F005/Data_ingestion_Streamlit_app
+git push --set-upstream origin feature/F005/Data_ingestion_Streamlit_app
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+###############################################
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+cd F:\NotGames\PythonDev\PanojaLite_V1_0\PanojaLite\scripts
+
+streamlit run f:/NotGames/PythonDev/PanojaLite_V1_0/PanojaLite/scripts/test_code.py
+
+streamlit run f:/NotGames/PythonDev/PanojaLite_V1_0/PanojaLite/streamlit/streamlit_app.py
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+#############################################################################################
+#############################################################################################
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
++-+-+-+-+-+-+-+-+-+-+-+
+|  #################  |
++-+-+-+-+-+-+-+-+-+-+-+
+|  NOTES: Version 2.0 |
++-+-+-+-+-+-+-+-+-+-+-+
+|  #################  |
++-+-+-+-+-+-+-+-+-+-+-+
+
+1. Budget/Forecasting
+2. On data ingestion dashboard: click on sidebar asset button to go to asset

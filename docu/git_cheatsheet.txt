@@ -1,0 +1,16 @@
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+git fetch origin
+git checkout main
+git pull origin main
++-+-+-+-+-+-+
+git checkout main
+git checkout -b feature/F012/Database_Migration_to_External_PostgreSQL
+git push --set-upstream origin feature/F012/Database_Migration_to_External_PostgreSQL
++-+-+-+-+-+-+
+git status
+git add .
+git restore --staged profiles.yml
+git commit -m "<comment>"
+git push
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
